@@ -24,15 +24,15 @@ open class CustomRefreshHeaderView: CustomRefreshView {
     }
 
     lazy var logoImageView: UIImageView? = {
-        let image = self.getImage(of: "loading_logo")
-        let imageView = UIImageView(image: image)
+//        let image = self.getImage(of: "loading_logo")
+        let imageView = UIImageView()
         self.addSubview(imageView)
         return imageView
     }()
 
     lazy var circleImageView: UIImageView? = {
-        let image = self.getImage(of: "loading_circle")
-        let imageView = UIImageView(image: image)
+//        let image = self.getImage(of: "loading_circle")
+        let imageView = UIImageView()
         self.addSubview(imageView)
         return imageView
     }()

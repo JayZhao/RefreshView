@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		865AB6D91D3BC455008D1EC1 /* RefreshView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8690DA761D0E98650068E02F /* RefreshView.framework */; };
-		865AB6DA1D3BC455008D1EC1 /* RefreshView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8690DA761D0E98650068E02F /* RefreshView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8697BC1D1CCE08C100E12544 /* UIViewControllerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8697BC1C1CCE08C100E12544 /* UIViewControllerDemo.swift */; };
 		86ECCB2E1C97F535008A6D58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ECCB2D1C97F535008A6D58 /* AppDelegate.swift */; };
 		86ECCB331C97F535008A6D58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86ECCB311C97F535008A6D58 /* Main.storyboard */; };
 		86ECCB351C97F535008A6D58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86ECCB341C97F535008A6D58 /* Assets.xcassets */; };
 		86ECCB381C97F535008A6D58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86ECCB361C97F535008A6D58 /* LaunchScreen.storyboard */; };
 		86ECCB4B1C97F595008A6D58 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ECCB491C97F595008A6D58 /* SecondViewController.swift */; };
+		EBFFD6A71E926F060035D893 /* RefreshView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFFD6A61E926F060035D893 /* RefreshView.framework */; };
+		EBFFD6A81E926F060035D893 /* RefreshView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBFFD6A61E926F060035D893 /* RefreshView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				865AB6DA1D3BC455008D1EC1 /* RefreshView.framework in Embed Frameworks */,
+				EBFFD6A81E926F060035D893 /* RefreshView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,7 +32,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8690DA761D0E98650068E02F /* RefreshView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = RefreshView.framework; path = "/Users/zouliangming/Library/Developer/Xcode/DerivedData/RefreshView-dtsrjnkkbxmtcgclwbhtjeiphbqu/Build/Products/Debug-iphonesimulator/RefreshView.framework"; sourceTree = "<absolute>"; };
 		8697BC1C1CCE08C100E12544 /* UIViewControllerDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerDemo.swift; sourceTree = "<group>"; };
 		86ECCB2A1C97F535008A6D58 /* RefreshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefreshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86ECCB2D1C97F535008A6D58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +40,7 @@
 		86ECCB371C97F535008A6D58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86ECCB391C97F535008A6D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86ECCB491C97F595008A6D58 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		EBFFD6A61E926F060035D893 /* RefreshView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RefreshView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				865AB6D91D3BC455008D1EC1 /* RefreshView.framework in Frameworks */,
+				EBFFD6A71E926F060035D893 /* RefreshView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +58,7 @@
 		86ECCB211C97F535008A6D58 = {
 			isa = PBXGroup;
 			children = (
-				8690DA761D0E98650068E02F /* RefreshView.framework */,
+				EBFFD6A61E926F060035D893 /* RefreshView.framework */,
 				86ECCB2C1C97F535008A6D58 /* RefreshDemo */,
 				86ECCB2B1C97F535008A6D58 /* Products */,
 			);
@@ -120,7 +120,6 @@
 				TargetAttributes = {
 					86ECCB291C97F535008A6D58 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 9FKD467RME;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -297,7 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9FKD467RME;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RefreshDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sean.RefreshDemo;
@@ -310,7 +309,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9FKD467RME;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RefreshDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sean.RefreshDemo;

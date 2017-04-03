@@ -10,7 +10,7 @@ import UIKit
 
 open class CustomRefreshFooterView: CustomRefreshView {
 
-    fileprivate var loadingText = LocalizedString(key: "Loading")
+    fileprivate var loadingText = localizedString(key: "Loading")
     fileprivate var isAutomaticallyRefresh = true
     fileprivate var triggerAutomaticallyRefreshPercent: CGFloat = 0.1
 
@@ -46,8 +46,8 @@ open class CustomRefreshFooterView: CustomRefreshView {
     }
 
     lazy var logoImageView: UIImageView? = {
-        let image = self.getImage(of: "loading_logo")
-        let imageView = UIImageView(image: image)
+//        let image = self.getImage(of: "loading_logo")
+        let imageView = UIImageView()
         imageView.isHidden = true
         self.addSubview(imageView)
         return imageView
