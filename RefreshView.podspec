@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.frameworks   = "Foundation", "UIKit"
-  s.resources    = "images.xcassets"
+  s.resources    = "RefreshView/images.xcassets"
 
 end
