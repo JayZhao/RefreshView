@@ -13,8 +13,8 @@
 		86ECCB351C97F535008A6D58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86ECCB341C97F535008A6D58 /* Assets.xcassets */; };
 		86ECCB381C97F535008A6D58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86ECCB361C97F535008A6D58 /* LaunchScreen.storyboard */; };
 		86ECCB4B1C97F595008A6D58 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ECCB491C97F595008A6D58 /* SecondViewController.swift */; };
-		EBFFD6A71E926F060035D893 /* RefreshView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFFD6A61E926F060035D893 /* RefreshView.framework */; };
-		EBFFD6A81E926F060035D893 /* RefreshView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBFFD6A61E926F060035D893 /* RefreshView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C35DE52B1F44112D002C108F /* RefreshView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C35DE52A1F44112D002C108F /* RefreshView.framework */; };
+		C35DE52C1F44112D002C108F /* RefreshView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C35DE52A1F44112D002C108F /* RefreshView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EBFFD6A81E926F060035D893 /* RefreshView.framework in Embed Frameworks */,
+				C35DE52C1F44112D002C108F /* RefreshView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,7 +40,7 @@
 		86ECCB371C97F535008A6D58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86ECCB391C97F535008A6D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86ECCB491C97F595008A6D58 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		EBFFD6A61E926F060035D893 /* RefreshView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RefreshView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C35DE52A1F44112D002C108F /* RefreshView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RefreshView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBFFD6A71E926F060035D893 /* RefreshView.framework in Frameworks */,
+				C35DE52B1F44112D002C108F /* RefreshView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +58,7 @@
 		86ECCB211C97F535008A6D58 = {
 			isa = PBXGroup;
 			children = (
-				EBFFD6A61E926F060035D893 /* RefreshView.framework */,
+				C35DE52A1F44112D002C108F /* RefreshView.framework */,
 				86ECCB2C1C97F535008A6D58 /* RefreshDemo */,
 				86ECCB2B1C97F535008A6D58 /* Products */,
 			);
@@ -120,6 +120,7 @@
 				TargetAttributes = {
 					86ECCB291C97F535008A6D58 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 9FKD467RME;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -296,7 +297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9FKD467RME;
 				INFOPLIST_FILE = RefreshDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sean.RefreshDemo;
@@ -309,7 +310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9FKD467RME;
 				INFOPLIST_FILE = RefreshDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sean.RefreshDemo;

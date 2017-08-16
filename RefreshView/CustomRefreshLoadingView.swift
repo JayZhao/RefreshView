@@ -68,7 +68,13 @@ open class CustomRefreshLoadingView: UIView {
     fileprivate func commonInit() {
         self.imageViewLogo = UIImageView()
         self.imageViewLoading = UIImageView()
-        self.imageViewLogo.image = getImage(of: "loading_logo")
+
+        if let logoImage = CustomLogoManager.shared.logoImage {
+            self.imageViewLogo.image = logoImage
+        } else {
+            self.imageViewLogo.image = getImage(of: CustomLogoManager.shared.logoName)
+        }
+
         self.imageViewLoading.image = getImage(of: "loading_circle")
         self.imageViewLogo.backgroundColor = UIColor.clear
         self.imageViewLoading.backgroundColor = UIColor.clear
@@ -88,7 +94,7 @@ open class CustomRefreshLoadingView: UIView {
     open func startAnimation() {
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         rotateAnimation.fromValue = 0.0
-        rotateAnimation.toValue = CGFloat(M_PI * 2.0)
+        rotateAnimation.toValue = Double.pi * 2.0
         rotateAnimation.duration = 1
         rotateAnimation.repeatCount = Float(CGFloat.greatestFiniteMagnitude)
         rotateAnimation.isRemovedOnCompletion = false
