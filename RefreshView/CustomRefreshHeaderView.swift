@@ -24,15 +24,23 @@ open class CustomRefreshHeaderView: CustomRefreshView {
     }
 
     lazy var logoImageView: UIImageView? = {
-//        let image = self.getImage(of: "loading_logo")
-        let imageView = UIImageView()
+
+        
+        var image = UIImage()
+        if let logoImage = CustomLogoManager.shared.logoImage {
+            image = logoImage
+        } else {
+            image = self.getImage(of: CustomLogoManager.shared.logoName)
+        }
+
+        let imageView = UIImageView(image: image)
         self.addSubview(imageView)
         return imageView
     }()
 
     lazy var circleImageView: UIImageView? = {
-//        let image = self.getImage(of: "loading_circle")
-        let imageView = UIImageView()
+        let image = self.getImage(of: "loading_circle")
+        let imageView = UIImageView(image: image)
         self.addSubview(imageView)
         return imageView
     }()
@@ -174,7 +182,7 @@ open class CustomRefreshHeaderView: CustomRefreshView {
 
     fileprivate func scrollViewContentOffsetDidChange(_ change: [NSKeyValueChangeKey : Any]?) {
         if state == .refreshing {
-            if let _ = window {
+            if window != nil {
                 var insetT = -scrollView!.offsetY > scrollViewOriginalInset!.top ? -scrollView!.offsetY : scrollViewOriginalInset!.top
                 insetT = insetT > sizeHeight + scrollViewOriginalInset!.top ? sizeHeight + scrollViewOriginalInset!.top : insetT
                 scrollView?.insetTop = insetT
@@ -234,7 +242,7 @@ open class CustomRefreshHeaderView: CustomRefreshView {
     fileprivate func startAnimation() {
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         rotateAnimation.fromValue = -angle
-        rotateAnimation.toValue = -angle + CGFloat(M_PI * 2.0)
+        rotateAnimation.toValue = -angle + CGFloat.pi * 2.0
         rotateAnimation.duration = 1
         rotateAnimation.isRemovedOnCompletion = false
         rotateAnimation.repeatCount = Float(CGFloat.greatestFiniteMagnitude)
@@ -275,7 +283,7 @@ open class CustomRefreshHeaderView: CustomRefreshView {
         })
 
         pullingPercent = 1.0
-        if let _ = window {
+        if window != nil {
             state = .refreshing
         } else {
             if state != .refreshing {

@@ -13,6 +13,7 @@ open class CustomRefreshFooterView: CustomRefreshView {
     fileprivate var loadingText = localizedString(key: "Loading")
     fileprivate var isAutomaticallyRefresh = true
     fileprivate var triggerAutomaticallyRefreshPercent: CGFloat = 0.1
+    fileprivate var lastUpdated: Date = Date()
 
     var state: RefreshState? {
         didSet {
@@ -22,6 +23,7 @@ open class CustomRefreshFooterView: CustomRefreshView {
             } else if state == .idle {
                 if cellsCount() != 0 {
                     circleImageView?.layer.removeAnimation(forKey: kCustomRefreshAnimationKey)
+                    hideFooterView(true)
                 }
             }
         }
@@ -46,8 +48,15 @@ open class CustomRefreshFooterView: CustomRefreshView {
     }
 
     lazy var logoImageView: UIImageView? = {
-//        let image = self.getImage(of: "loading_logo")
-        let imageView = UIImageView()
+
+        var image = UIImage()
+        if let logoImage = CustomLogoManager.shared.logoImage {
+            image = logoImage
+        } else {
+            image = self.getImage(of: CustomLogoManager.shared.logoName)
+        }
+
+        let imageView = UIImageView(image: image)
         imageView.isHidden = true
         self.addSubview(imageView)
         return imageView
@@ -240,7 +249,7 @@ open class CustomRefreshFooterView: CustomRefreshView {
         placeSubviews()
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         rotateAnimation.fromValue = 0.0
-        rotateAnimation.toValue = CGFloat(M_PI * 2.0)
+        rotateAnimation.toValue = Double.pi * 2.0
         rotateAnimation.duration = 1
         rotateAnimation.repeatCount = Float(CGFloat.greatestFiniteMagnitude)
         rotateAnimation.isRemovedOnCompletion = false
@@ -281,6 +290,11 @@ open class CustomRefreshFooterView: CustomRefreshView {
     }
 
     fileprivate func beginRefreshing() {
+        if Date().timeIntervalSince(lastUpdated) < 1 {
+            return
+        }
+        lastUpdated = Date()
+
         UIView.animate(withDuration: kCustomRefreshFastAnimationTime, animations: {
             self.alpha = 1.0
         })
@@ -288,7 +302,7 @@ open class CustomRefreshFooterView: CustomRefreshView {
         hideFooterView(false)
         pullingPercent = 1.0
 
-        if let _ = window {
+        if window != nil {
             state = .refreshing
         } else {
             if state != .refreshing {
@@ -299,6 +313,12 @@ open class CustomRefreshFooterView: CustomRefreshView {
     }
 
     open func endRefreshing() {
-        state = .idle
+        if Date().timeIntervalSince(lastUpdated) < 0.1 {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                self.state = .idle
+            }
+        } else {
+            self.state = .idle
+        }
     }
 }
